@@ -9,3 +9,5 @@ Nhận xét: có vẻ như mô hình không cần giảm nhẹ đi mà cần th�
 
 Lần 2: 
 Lần này không phải tối ưu, tôi thử nghiệm chạy chỉ với 10 feature có impact cao nhất xem model còn giữ được độ hiệu quả hay không.
+Kết quả thử nghiệm: 0.93776 - 0.93976
+Nhận xét: score bị giảm nhẹ, chấp nhận được cho demo.
