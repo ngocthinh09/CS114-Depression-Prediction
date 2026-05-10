@@ -13,6 +13,16 @@ Kết quả thử nghiệm: 0.93776 - 0.93976
 Nhận xét: score bị giảm nhẹ, chấp nhận được cho demo.
 
 Lần 3: 
-Lần này sẽ xử dụng k-fold để train.
+Lần này sẽ sử dụng k-fold để train.
 Kết quả: 0.94061 - 0.94179
-Nhận xét: Phương pháp này có vẻ hiệu quả khi đạt được kết quả tối ưu hơn
+Nhận xét: Phương pháp này có vẻ hiệu quả khi đạt được kết quả tối ưu hơn. Vậy nên tôi sẽ thêm k-fold vào pipeline chính.
+
+Lần 4: 
+Thử tune threshold thay vì 0.5 thì sẽ là 0.482 (dựa trên kết quả chạy thử trên tập val)
+Kết quả: 0.94039 - 0.94093
+Nhận xét: Dù những điểm số của các metrics khác tăng nhưng accuracy trên kaggle giảm nên tôi sẽ bỏ nó đi.
+
+Lần 5:
+Thử vài chế vài feature.
+Kết quả: 0.94061 - 0.94232
+Nhận xét: Kết quả tăng nhẹ, khả năng là nó hiệu quả.
