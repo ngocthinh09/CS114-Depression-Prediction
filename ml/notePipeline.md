@@ -26,3 +26,8 @@ Lần 5:
 Thử vài chế vài feature.
 Kết quả: 0.94061 - 0.94232
 Nhận xét: Kết quả tăng nhẹ, khả năng là nó hiệu quả.
+
+Lần 6:
+Thử ensemble 5 catboost và 5 xgboost
+Kết quả: 0.94085 - 0.94237
+Nhận xét: Tăng private score nhưng giảm public score, khả năng là nó generalize tốt hơn.
