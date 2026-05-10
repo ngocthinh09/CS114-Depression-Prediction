@@ -11,3 +11,8 @@ Lần 2:
 Lần này không phải tối ưu, tôi thử nghiệm chạy chỉ với 10 feature có impact cao nhất xem model còn giữ được độ hiệu quả hay không.
 Kết quả thử nghiệm: 0.93776 - 0.93976
 Nhận xét: score bị giảm nhẹ, chấp nhận được cho demo.
+
+Lần 3: 
+Lần này sẽ xử dụng k-fold để train.
+Kết quả: 0.94061 - 0.94179
+Nhận xét: Phương pháp này có vẻ hiệu quả khi đạt được kết quả tối ưu hơn
