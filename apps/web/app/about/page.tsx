@@ -27,7 +27,7 @@ export default function AboutPage() {
       <main className="grow w-full max-w-container-max mx-auto px-margin-mobile md:px-lg py-xl flex flex-col gap-xl relative z-10">
         {/* Mission Section */}
         <section className="relative w-full rounded-2xl overflow-hidden bg-primary-container p-8 md:p-xl flex items-center justify-center min-h-[350px] soft-shadow">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-container to-surface-bright opacity-40"></div>
+          <div className="absolute inset-0 bg-linear-to-br from-primary-container to-surface-bright opacity-40"></div>
           <GlassCard intensity="strong" className="relative z-10 max-w-3xl p-8 md:p-lg text-center flex flex-col items-center gap-md border-white/40">
             <span
               className="material-symbols-outlined text-[48px] text-primary mb-sm"

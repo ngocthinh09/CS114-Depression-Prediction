@@ -23,7 +23,7 @@ export const TeamMemberCard = ({
     <div className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-md group p-md">
       <div
         className={cn(
-          "w-[100px] h-[100px] flex-shrink-0 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300",
+          "w-[100px] h-[100px] shrink-0 rounded-full flex items-center justify-center group-hover:scale-105 transition-transform duration-300",
           bgClasses[avatarBgColor]
         )}
       >
@@ -31,7 +31,7 @@ export const TeamMemberCard = ({
           {avatarIcon}
         </span>
       </div>
-      <div className="flex flex-col gap-sm flex-grow justify-center h-full">
+      <div className="flex flex-col gap-sm grow justify-center h-full">
         <h3 className="text-headline-md text-on-surface font-semibold whitespace-nowrap">
           {name}
         </h3>

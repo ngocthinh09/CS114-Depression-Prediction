@@ -22,3 +22,8 @@ Nhật ký thay đổi kỹ thuật của các phiên làm việc với Antigrav
 - Đã dựng hoàn chỉnh màn hình **Help / How It Works** (`/help`): Hero, Steps Bento Grid (3+2), FAQ Grid, Disclaimer Card.
 - Đã gỡ bỏ màn hình Welcome theo yêu cầu người dùng, cập nhật lại route của Home thành trang gốc (`/`) trên toàn bộ tài liệu dự án (`VIBE_MAP.md`, `SCREEN_STATUS.md`, `UI_INVENTORY.md`).
 - Đã sửa link "Home" trên `TopNavBar` và thiết lập redirect trên cấu hình Next.js (`next.config.js`) để điều hướng tự động từ `/home` về `/`.
+- Đã sửa cảnh báo `scroll-behavior: smooth` của Next.js bằng cách thêm `data-scroll-behavior="smooth"` vào `RootLayout`.
+- Đã tạo các component hỗ trợ: `<UrgentNotice>`, `<SupportOptionCard>`, `<ContactInfoRow>`.
+- Đã dựng hoàn chỉnh màn hình **Get Support** (`/support`) với đầy đủ thông tin liên hệ và các lựa chọn hỗ trợ khẩn cấp.
+- Đã sửa lỗi UI các nút bấm bị mất định dạng bằng cách thêm `@source "../../../packages/ui";` vào `globals.css` để Tailwind v4 quét CSS từ monorepo.
+- Đã cấu hình lại `tailwind-merge` trong `packages/ui/src/utils.ts` để sửa lỗi xung đột giữa class màu chữ (`text-on-primary`) và typography (`text-label-md`), giúp nút bấm hiển thị đúng màu chữ tương phản.

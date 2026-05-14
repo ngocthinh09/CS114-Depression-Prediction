@@ -22,11 +22,12 @@ Dựa trên VIBE_MAP.md (Mục 2). Trạng thái các component được tái s�
 | `<CircularGauge>` | Todo | - | SVG Gauge hiển thị điểm số ML |
 | `<RiskBadge>` | **Done** | `packages/ui/src/risk-badge.tsx` | Nhãn mức độ nguy cơ: Low, Mild, Moderate, Severe |
 | `<InfoTip>` | Todo | - | Hiển thị thông báo, lời khuyên nhỏ |
-| `<UrgentNotice>` | Todo | - | Cảnh báo khẩn cấp màu đỏ |
+| `<UrgentNotice>` | **Done** | `apps/web/components/ui/UrgentNotice.tsx` | Cảnh báo khẩn cấp màu đỏ |
 | `<FAQCard>` | **Done** | `apps/web/components/help/FAQCard.tsx` | FAQ card cho Help Page, nhận `icon`, `iconColor`, `question`, `answer` |
 | `<TeamMemberCard>` | **Done** | `apps/web/components/about/TeamMemberCard.tsx` | Cho About Page |
+| `<SupportOptionCard>` | **Done** | `apps/web/components/support/SupportOptionCard.tsx` | Card lựa chọn hỗ trợ trong trang Support |
 | `<LogoGroup>` | **Done** | `apps/web/components/ui/LogoGroup.tsx` | Chứa logo UIT + CS, pill style |
-| `<ContactInfoRow>` | Todo | - | Hiển thị thông tin liên hệ |
+| `<ContactInfoRow>` | **Done** | `apps/web/components/support/ContactInfoRow.tsx` | Hiển thị thông tin liên hệ |
 
 ## 2.3 Form Components (Assessment)
 
