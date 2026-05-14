@@ -44,3 +44,9 @@ __pycache__
 
 # Data
 data/
+
+
+# Markdown
+pipeline.md
+workflow.md
+instruction-coding.md
