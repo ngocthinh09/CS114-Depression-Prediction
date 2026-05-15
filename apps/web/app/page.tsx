@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TopNavBar } from "../components/layout/TopNavBar";
 import { Footer } from "../components/layout/Footer";
 import { Button } from "@repo/ui/button";
@@ -31,7 +32,9 @@ export default function Home() {
               Academic pressure and student life can sometimes be overwhelming. Take a few minutes to check your mental health safely and privately.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Button size="lg">Start Assessment Now</Button>
+              <Link href="/assessment">
+                <Button size="lg">Start Assessment Now</Button>
+              </Link>
               <Button variant="secondary-outlined" size="lg">Learn More</Button>
             </div>
           </div>
