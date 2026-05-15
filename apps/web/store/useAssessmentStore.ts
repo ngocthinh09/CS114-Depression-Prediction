@@ -131,7 +131,6 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
     try {
       const data = get().formData;
       
-      // Prepare payload to match Backend API Schema (AssessmentRequest)
       const payload = {
         "Name": data.name || "Anonymous",
         "Gender": data.gender,
@@ -156,7 +155,6 @@ export const useAssessmentStore = create<AssessmentState>((set, get) => ({
         "Family History of Mental Illness": data.familyHistory,
       };
 
-      // Call Backend API
       const response = await fetch("http://127.0.0.1:8000/predict", {
         method: "POST",
         headers: {
