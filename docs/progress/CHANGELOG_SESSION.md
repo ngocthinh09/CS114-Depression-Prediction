@@ -27,3 +27,8 @@ Nhật ký thay đổi kỹ thuật của các phiên làm việc với Antigrav
 - Đã dựng hoàn chỉnh màn hình **Get Support** (`/support`) với đầy đủ thông tin liên hệ và các lựa chọn hỗ trợ khẩn cấp.
 - Đã sửa lỗi UI các nút bấm bị mất định dạng bằng cách thêm `@source "../../../packages/ui";` vào `globals.css` để Tailwind v4 quét CSS từ monorepo.
 - Đã cấu hình lại `tailwind-merge` trong `packages/ui/src/utils.ts` để sửa lỗi xung đột giữa class màu chữ (`text-on-primary`) và typography (`text-label-md`), giúp nút bấm hiển thị đúng màu chữ tương phản.
+- Đã tạo Pydantic Schema (`AssessmentRequest` trong `apps/api/schemas.py`) và endpoint `POST /predict` (`apps/api/main.py`) để nhận và validate dữ liệu từ Frontend Assessment Form.
+- Đã xây dựng hoàn chỉnh luồng Frontend trang **Assessment / Prediction**:
+  - Tích hợp **Zustand** (`useAssessmentStore.ts`) để quản lý trạng thái form đa bước.
+  - Tạo các UI Components tùy chỉnh: `<ProgressBar>`, `<RadioChipGroup>`, `<RatingScale>`, `<QuestionSection>`.
+  - Cấu trúc form 3 bước, có logic ẩn hiện câu hỏi động theo Role (`Student` hoặc `Working Professional`) tại route `/assessment`.
