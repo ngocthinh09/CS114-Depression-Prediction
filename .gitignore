@@ -43,3 +43,6 @@ yarn-error.log*
 # Python
 __pycache__
 *.pyc
+
+# ML training artifacts
+ml/catboost_info/

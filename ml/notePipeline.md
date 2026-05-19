@@ -30,4 +30,9 @@ Nhận xét: Kết quả tăng nhẹ, khả năng là nó hiệu quả.
 Lần 6:
 Thử ensemble 5 catboost và 5 xgboost
 Kết quả: 0.94085 - 0.94237
-Nhận xét: Tăng private score nhưng giảm public score, khả năng là nó generalize tốt hơn.
+Nhận xét: Tăng private score nhưng giảm public score, khả năng là nó generalize tốt hơn. Tuy vậy thì tôi sẽ dừng lại ở đây và chỉ ensemble 1 catboost và 1 xgboost.
+
+Lần 7: 
+Thử thêm mapping Sleep Duration / Dietary Habits như notebook của leaderboard
+Kết quả: 0.94077 - 0.94200
+Nhận xét: Không biết nói gì
