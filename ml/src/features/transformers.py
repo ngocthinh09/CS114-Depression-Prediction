@@ -31,8 +31,6 @@ class StringCleaner(BaseEstimator, TransformerMixin):
             X_out[col] = X_out[col].replace({"": np.nan, "nan": np.nan, "None": np.nan})
         return X_out
 
-
-
 class MissingIndicatorAdder(BaseEstimator, TransformerMixin):
     """
     Create additional binary columns `<col>_is_missing` for columns
@@ -108,6 +106,49 @@ class BinaryYesNoEncoder(BaseEstimator, TransformerMixin):
         for col in self.cols:
             if col in X_out.columns:
                 X_out[col] = X_out[col].map({"Yes": 1, "No": 0})
+        return X_out
+
+class HasValueIndicatorEncoder(BaseEstimator, TransformerMixin):
+    """
+    Convert selected categorical columns into binary indicators:
+    - 1: has a meaningful value
+    - 0: missing / empty / Not Applicable / Other invalid values
+
+    Example:
+    - Degree -> 1 if user has degree info, else 0
+    - Profession -> 1 if user has profession info, else 0
+    """
+    def __init__(self, cols: list[str] | None = None) -> None:
+        self.cols = cols if cols is not None else ["Degree", "Profession"]
+
+    def fit(self, X: pd.DataFrame, y: pd.Series | None = None) -> HasValueIndicatorEncoder:
+        return self
+
+    def transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        X_out: pd.DataFrame = X.copy()
+
+        invalid_values = {
+            "",
+            "nan",
+            "none",
+            "null",
+            "not applicable",
+            "n/a",
+            "na",
+            "other",
+        }
+
+        for col in self.cols:
+            if col in X_out.columns:
+                s = X_out[col]
+
+                has_value = (
+                    s.notna()
+                    & ~s.astype(str).str.strip().str.lower().isin(invalid_values)
+                )
+
+                X_out[col] = has_value.astype(int)
+
         return X_out
 
 
