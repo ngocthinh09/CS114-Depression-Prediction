@@ -1,4 +1,4 @@
-scikit-learn
-numpy
-matplotlib
-seaborn
+scikit-learn==1.7.2
+numpy==2.2.3
+matplotlib==3.10.0
+seaborn==0.13.2
