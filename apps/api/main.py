@@ -13,7 +13,7 @@ if ml_path not in sys.path:
     sys.path.append(ml_path)
 
 try:
-    model = joblib.load(os.path.join(ml_path, 'models', 'model_random_forest.joblib'))
+    model = joblib.load(os.path.join(ml_path, 'models', 'model_xgboost.joblib'))
     print("Model loaded successfully!")
 except Exception as e:
     print(f"Error loading models: {e}")
