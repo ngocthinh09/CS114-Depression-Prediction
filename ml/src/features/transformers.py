@@ -7,8 +7,7 @@ from sklearn.base import TransformerMixin, BaseEstimator
 
 ROLE_COL= "Working Professional or Student"
 STUDENT_ONLY_NUM_COLS = ["Academic Pressure", "CGPA", "Study Satisfaction"]
-WORKER_ONLY_NUM_COLS = ["Work Pressure", "Job Satisfaction"]
-WORKER_ONLY_CAT_COLS = ["Profession"]
+WORKER_ONLY_NUM_COLS = ["Work Pressure", "Job Satisfaction", "Profession"]
 BINARY_YES_NO_COLS = ["Have you ever had suicidal thoughts ?", "Family History of Mental Illness"]
 
 
@@ -82,10 +81,6 @@ class StructuralMissingImputer(BaseEstimator, TransformerMixin):
         for col in WORKER_ONLY_NUM_COLS:
             if col in X_out.columns:
                 X_out.loc[is_student & X_out[col].isna(), col] = 0.0
-
-        for col in WORKER_ONLY_CAT_COLS:
-            if col in X_out.columns:
-                X_out.loc[is_student & X_out[col].isna(), col] = "Not Applicable"
 
         return X_out
 
@@ -223,6 +218,7 @@ class FeatureEngineer(BaseEstimator, TransformerMixin):
         # --- Interaction Features ---
         suicidal_col: str = "Have you ever had suicidal thoughts ?"
         if "Total Pressure" in X_out.columns and suicidal_col in X_out.columns:
-            X_out["Suicide_Pressure_Interaction"] = (X_out[suicidal_col] * X_out["Total Pressure"])
+            suicidal_series = X_out[suicidal_col].map({"Yes": 1, "No": 0}).astype(int).fillna(0)
+            X_out["Suicide_Pressure_Interaction"] = (suicidal_series * X_out["Total Pressure"])
 
         return X_out

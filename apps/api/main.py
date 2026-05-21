@@ -13,12 +13,10 @@ if ml_path not in sys.path:
     sys.path.append(ml_path)
 
 try:
-    feature_pipeline = joblib.load(os.path.join(ml_path, 'models', 'feature_pipeline.joblib'))
     model = joblib.load(os.path.join(ml_path, 'models', 'model_random_forest.joblib'))
-    print("Models loaded successfully!")
+    print("Model loaded successfully!")
 except Exception as e:
     print(f"Error loading models: {e}")
-    feature_pipeline = None
     model = None
 
 app = FastAPI(title="MindfulCheck API")
@@ -37,19 +35,17 @@ def read_root():
 
 @app.post("/predict")
 def predict_depression(data: AssessmentRequest):
-    if feature_pipeline is None or model is None:
+    if model is None:
         return {"status": "error", "message": "ML Model not loaded."}
     
     data_dict = data.model_dump(by_alias=True)
     df = pd.DataFrame([data_dict])
     
     try:
-        df_transformed = feature_pipeline.transform(df)
+        prediction = int(model.predict(df)[0])
+        probabilities = model.predict_proba(df)[0]
     except Exception as e:
-        return {"status": "error", "message": f"Feature transformation failed: {e}"}
-    
-    prediction = int(model.predict(df_transformed)[0])
-    probabilities = model.predict_proba(df_transformed)[0]
+        return {"status": "error", "message": f"Prediction failed: {e}"}
     
     if prediction == 0:
         risk_level = "Healthy"
